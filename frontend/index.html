@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume Analyzer</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+</head>
+<body>
+
+<aside>
+  <div class="brand">📄 Resume Analyzer</div>
+  <button class="new-chat" id="newChat">＋ New chat</button>
+
+  <div class="resume-card" id="resumeCard">
+    <h4>Your resume</h4>
+    <div id="resumeInfo"></div>
+  </div>
+
+  <div class="mode">
+    <label for="mode">Mode</label>
+    <select id="mode">
+      <option value="analyze">Analyze &amp; improve</option>
+      <option value="interview">HR interview Q&amp;A</option>
+    </select>
+  </div>
+</aside>
+
+<main>
+  <header id="title">New chat</header>
+
+  <div id="chat">
+    <div class="wrap" id="messages">
+      <div class="welcome" id="welcome">
+        <h1>Upload your resume</h1>
+        <p>I'll analyze it and answer any question about how to improve it.</p>
+        <div class="drop" id="drop">
+          <div class="icon">⬆️</div>
+          <div><b>Click to upload</b> or drag &amp; drop</div>
+          <small>PDF only, up to 5 MB</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="composer">
+    <div class="box">
+      <button class="icon-btn" id="attach" title="Upload resume (PDF)">📎</button>
+      <textarea id="input" rows="1" placeholder="Upload a resume to begin…"></textarea>
+      <button class="icon-btn" id="send" title="Send" disabled>➤</button>
+    </div>
+    <div class="hint">AI can make mistakes. Review suggestions before using them.</div>
+  </div>
+  <input type="file" id="file" accept="application/pdf,.pdf" hidden>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
